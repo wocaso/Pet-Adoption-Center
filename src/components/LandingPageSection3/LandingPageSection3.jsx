@@ -11,7 +11,7 @@ function LandingPageSection3() {
 
         <div className="container-servicio">
             <div className="image-servicio">
-                <img src="/public/Assets/servicio_1.png" alt="Servicios"/>
+                <img src="/Assets/servicio_1.png" alt="Servicios"/>
             </div>
             <div className="servicio-text">
                 <p>Contamos con un programa en línea de adopción de mascotas.</p>
@@ -20,7 +20,7 @@ function LandingPageSection3() {
 
         <div className="container-servicio">
             <div className="image-servicio">
-                <img src="/public/Assets/servicio_2.png" alt="Servicios"/>
+                <img src="/Assets/servicio_2.png" alt="Servicios"/>
             </div>
             <div className="servicio-text">
                 <p>Rescatamos y rehabilitamos animales de las calles, del abandono, enfermedad y situaciones de maltrato animal. </p>
@@ -29,7 +29,7 @@ function LandingPageSection3() {
 
         <div className="container-servicio">
             <div className="image-servicio">
-                <img src="/public/Assets/servicio_3.png" alt="Servicios"/>
+                <img src="/Assets/servicio_3.png" alt="Servicios"/>
             </div>
             <div className="servicio-text">
                 <p>Se brindan servicios gratuitos como campañas de vacunas y  esterilización para combatir la sobrepoblación de animales callejeros.</p>

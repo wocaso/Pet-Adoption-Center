@@ -34,7 +34,7 @@ function LandingPageSection5() {
               <p>Firmar compromiso de llevar al animal a sus vacunas y esterilizar en caso de que sea cachorro</p>
           </li>
         </ul>
-        <img src="./Assets/gatoHojas.png" id="gatoimg" alt="" />
+        <img src="/Assets/gatoHojas.png" id="gatoimg" alt="" />
       </div>
     </div>
   );

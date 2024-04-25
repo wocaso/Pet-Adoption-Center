@@ -17,10 +17,10 @@ function LadingPageSection6() {
         </div>
 
         <div id="LadingPageSection6ContainerRightSocialContainer">
-          <img src="/public/Assets/PhoneLogo.png" alt="" />
-          <img src="/public/Assets/FacebookLogo.png" alt="" />
-          <img src="/public/Assets/WhatsappLogo.png" alt="" />
-          <img src="/public/Assets/MailLogo.png" alt="" />
+          <img src="/Assets/PhoneLogo.png" alt="" />
+          <img src="/Assets/FacebookLogo.png" alt="" />
+          <img src="/Assets/WhatsappLogo.png" alt="" />
+          <img src="/Assets/MailLogo.png" alt="" />
         </div>
       </div>
     </div>
