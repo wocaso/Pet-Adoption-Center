@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./SectionMascotas.css";
 import CardMascota from "./CardMascota/CardMascota";
 import RequisitosParaAdoptar from "../LandingPageSection5/LandingPageSection5";
+import Loader from "../Loader/Loader";
 import axios from "axios";
 
 function SectionMascotas() {
@@ -378,6 +379,7 @@ function SectionMascotas() {
             </div>
           </div>
           <div id="SectionMascotasCardsContainer">
+            {!mascotasFiltradas[0] && <Loader/> }
             {mascotasFiltradas.map((subArray, index) => (
               <React.Fragment key={index}>
                 {subArray.map((mascota, subIndex) => (

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./NewPost.css";
+import imgDefault from "/public/Assets/imgfilled.jpg";
 
 function NewPost() {
   const [Url_Imagen, setUrl_Imagen] = useState("");
@@ -78,13 +79,13 @@ function NewPost() {
             <div
               id="FormImage"
               style={{
-                backgroundImage: `url('${Url_Imagen}')`,
+                backgroundImage: `url('${Url_Imagen || imgDefault}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat"
               }}
             >
-              {!Url_Imagen && <p>Cargar imagen</p>}
+              {!Url_Imagen}
               <input
                 type="file"
                 accept="image/*"

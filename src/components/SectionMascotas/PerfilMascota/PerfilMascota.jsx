@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom'; 
+import Loader from '../../Loader/Loader';
 import "./PerfilMascota.css";
 import axios from "axios";
 
@@ -159,7 +160,7 @@ function PerfilMascota() {
 
   return (
     <section id='PerfilMascotaContainer'>
-      {mascotaSelect ?       <div id="PerfilMascota">
+      {mascotaSelect?       <div id="PerfilMascota">
         <img id='MascotaImage' src={mascotaSelect.imagen_url} alt="" />
         <div id="MascotaInfo">
           <h1 id="MascotaName">{mascotaSelect.nombre} <span>8 años</span></h1>
@@ -178,7 +179,7 @@ function PerfilMascota() {
         </div>
 
 
-      </div>:< h1>holus</h1>}
+      </div> : <div style={{ marginTop: "500px" }}><Loader/></div>}
 
 
     </section>
