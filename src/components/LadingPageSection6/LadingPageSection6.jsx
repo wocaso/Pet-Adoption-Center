@@ -23,7 +23,13 @@ function LadingPageSection6() {
           <img src="/Assets/MailLogo.png" alt="" />
         </div>
       </div>
+      <div id="copyright">
+        <p>Copyright 2024</p>
+        <span>|</span>
+        <a href="/logIn">Iniciar sesión</a>
+      </div>
     </div>
+
   );
 }
 
