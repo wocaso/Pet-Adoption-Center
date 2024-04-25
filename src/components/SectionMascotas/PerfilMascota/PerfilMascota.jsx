@@ -166,11 +166,9 @@ function PerfilMascota() {
           <h1 id="MascotaName">{mascotaSelect.nombre} <span>8 años</span></h1>
           <ul id="MascotaInfoList">
             <li><p>Temperamento</p><p>{mascotaSelect.temperamento}</p></li>
-            <li><p>Raza</p><p>{mascotaSelect.raza}</p></li>
             <li><p>Tamaño</p><p>{mascotaSelect.tamaño}</p></li>
-            <li><p>Género</p><p>{mascotaSelect.genero}</p></li>
+            <li><p>Género</p><p>{mascotaSelect.sexo}</p></li>
             <li><p>Edad</p><p>{mascotaSelect.edad}</p></li>
-            <li><p>Color</p><p>{mascotaSelect.color}</p></li>
           </ul>
           <p id="MascotaDescripcion">La más serena, la que mejor se porta, la que te da cero problemas pero te llena de amor y paz, esa soy yo, Tengo 8 años, me porto divino, te espero pacientemente para escuchar tu día y aliviarte de todos los problemas, me llevo bien con todos, ¿me adoptás? Estoy castrada, vacunada y desparasitada</p>
           <Link to={`/perfil/${mascotaSelect.id}/contrato`}>
