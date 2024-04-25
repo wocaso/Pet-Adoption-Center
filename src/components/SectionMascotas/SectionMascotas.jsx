@@ -386,6 +386,7 @@ function SectionMascotas() {
                     id={mascota.id}
                     nombre={mascota.nombre}
                     temperamento={mascota.temperamento}
+                    img={mascota.imagen_url}
                   />
                 ))}
               </React.Fragment>

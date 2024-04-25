@@ -5,7 +5,7 @@ import "./CardMascota.css";
 function CardMascota(props) {
   return (
     <div id='CardMascotaContainer'>
-        <img id='CardMascotaImage' src="./Assets/PerroGolden.png" alt="" />
+        <img id='CardMascotaImage' src={props.img} alt="" />
         <div id='CardMascotaDatos'>
         <Link to={`/perfil/${props.id}`}>
           <h1 id='CardMascotaNombre'>{props.nombre}</h1>

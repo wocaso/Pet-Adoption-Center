@@ -4,60 +4,76 @@ import { Link, useParams } from 'react-router-dom';
 import { useFormik } from "formik";
 import axios from 'axios';
 
-const validate = values => {
+function validacion(values) {
+  let isValid = true;
   const errors = {};
 
   if (!values.nombreApellido) {
     errors.nombreApellido = "Campo requerido";
+    isValid = false;
   }
   if (!values.ciudad) {
     errors.ciudad = "Campo requerido";
+    isValid = false;
   }
   if (!values.trabajoCargo) {
     errors.trabajoCargo = "Campo requerido";
+    isValid = false;
   }
   if (!values.solvenciaEconomica) {
     errors.solvenciaEconomica = "Campo requerido";
+    isValid = false;
   }
   if (!values.tipoVivienda) {
     errors.tipoVivienda = "Campo requerido";
+    isValid = false;
   }
   if (!values.vivienda) {
     errors.vivienda = "Campo requerido";
+    isValid = false;
   }
   if (!values.tieneMascotas) {
     errors.tieneMascotas = "Campo requerido";
+    isValid = false;
   }
   if (!values.antecedentes) {
     errors.antecedentes = "Campo requerido";
+    isValid = false;
   }
   if (!values.adopcion) {
     errors.adopcion = "Campo requerido";
+    isValid = false;
   }
   if (!values.acuerdoAdopcion) {
     errors.acuerdoAdopcion = "Campo requerido";
+    isValid = false;
   }
   if (!values.dondeDormira) {
     errors.dondeDormira = "Campo requerido";
+    isValid = false;
   }
   if (!values.aCargo) {
     errors.aCargo = "Campo requerido";
+    isValid = false;
   }
   if (!values.veterinarioConfianza) {
     errors.veterinarioConfianza = "Campo requerido";
+    isValid = false;
   }
   if (!values.esterilizacion) {
     errors.esterilizacion = "Campo requerido";
+    isValid = false;
   }
   if (!values.email) {
     errors.email = "Campo requerido";
+    isValid = false;
   }
-  return errors;
+
+  return { isValid, errors };
 }
 
 function FomularioAdopcion() {
   const { id } = useParams(); 
- 
 
   const idNum = parseInt(id, 10);
   const formik = useFormik({
@@ -71,7 +87,7 @@ function FomularioAdopcion() {
       vivienda: "",
       tieneMascotas: "",
       antecedentes: "",
-      adopcion: "", // Campo agregado
+      adopcion: "",
       acuerdoAdopcion: "",
       dondeDormira: "",
       aCargo: "",
@@ -79,19 +95,27 @@ function FomularioAdopcion() {
       esterilizacion: "",
       email:"",
     },
-    validate,
-    onSubmit: async (values) => { // Corregir la declaración de onSubmit como función asíncrona
-      try {
-        // Enviar datos al servidor
-        const response = await axios.post('https://adoptaapp.pythonanywhere.com/candidato', values);
-    
-        console.log(response.data);
-        window.location.href = `/perfil/${idNum}/contrato/FormularioAdopcion/end`;
+    onSubmit: (values) => {
+      const { isValid, errors } = validacion(values);
+      if (isValid) {
+        axios.post('https://adoptaapp.pythonanywhere.com/candidato', values)
+          .then(response => {
+            console.log(response.data);
+            window.location.href = `/perfil/${idNum}/contrato/FormularioAdopcion/end`;
+          })
+          .catch(error => {
+            console.error('Error al enviar los datos', error);
+          });
+      } else {
+        console.error('Campos inválidos', errors);
+        const formAlert = document.getElementById("FormAlert");
 
-        // Manejar respuesta exitosa
-      } catch (error) {
-        console.error('Error al enviar los datos:', error);
-        // Manejar errores
+        if (formAlert) {
+          formAlert.textContent = "Todos los campos son requeridos";
+          document.getElementById("FormAlert").style.display ="flex";
+        } else {
+          console.error('Elemento FormAlert no encontrado en el DOM');
+        }
       }
     },
   });
@@ -101,7 +125,6 @@ function FomularioAdopcion() {
       <h1>Formulario de Adopción</h1>
       <div className="FomularioAdopcion">
         <form onSubmit={formik.handleSubmit}>
-          {/* Espacio 1 */}
           <div className="container-lable-input">
             <div>
               <label>¿Cuál es tu nombre y apellido?</label>
@@ -114,12 +137,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.nombreApellido}
               />
-              {formik.errors.nombreApellido ? (
-                <div className="errors">{formik.errors.nombreApellido}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 2 */}
           <div className="container-lable-input">
             <div>
               <label>¿En qué ciudad vives?</label>
@@ -132,12 +151,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.ciudad}
               />
-              {formik.errors.ciudad ? (
-                <div className="errors">{formik.errors.ciudad}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 3 */}
           <div className="container-lable-input">
             <div>
               <label>¿Cuál es tu trabajo y cargo?</label>
@@ -150,12 +165,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.trabajoCargo}
               />
-              {formik.errors.trabajoCargo ? (
-                <div className="errors">{formik.errors.trabajoCargo}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 4 */}
           <div className="container-lable-input">
             <div>
               <label>¿A cuánto asciende tu solvencia económica mensualmente?</label>
@@ -172,12 +183,9 @@ function FomularioAdopcion() {
                 <option value="$1000 - $2000 USD">$1000 - $2000 USD</option>
                 <option value="Más de $2000 USD">Más de $2000 USD</option>
               </select>
-              {formik.errors.solvenciaEconomica ? (
-                <div className="errors">{formik.errors.solvenciaEconomica}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 5 */}
+          {/* Agregar los campos faltantes aquí */}
           <div className="container-lable-input">
             <div>
               <label>¿Qué tipo de vivienda tienes?</label>
@@ -194,12 +202,8 @@ function FomularioAdopcion() {
                 <option value="Departamento">Departamento</option>
                 <option value="Otros">Otros</option>
               </select>
-              {formik.errors.tipoVivienda ? (
-                <div className="errors">{formik.errors.tipoVivienda}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 6 */}
           <div className="container-lable-input">
             <div>
               <label>¿Dónde viviría el animal?</label>
@@ -212,12 +216,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.vivienda}
               />
-              {formik.errors.vivienda ? (
-                <div className="errors">{formik.errors.vivienda}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 7 */}
           <div className="container-lable-input">
             <div>
               <label>¿Tienes otras mascotas?</label>
@@ -230,12 +230,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.tieneMascotas}
               />
-              {formik.errors.tieneMascotas ? (
-                <div className="errors">{formik.errors.tieneMascotas}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 8 */}
           <div className="container-lable-input">
             <div>
               <label>¿Tienes antecedentes de tenencia de animales?</label>
@@ -248,12 +244,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.antecedentes}
               />
-              {formik.errors.antecedentes ? (
-                <div className="errors">{formik.errors.antecedentes}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 9 */}
           <div className="container-lable-input">
             <div>
               <label>¿Por qué deseas adoptar a esta mascota?</label>
@@ -266,12 +258,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.adopcion}
               />
-              {formik.errors.adopcion ? (
-                <div className="errors">{formik.errors.adopcion}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 10 */}
           <div className="container-lable-input">
             <div>
               <label>¿Estás de acuerdo con el proceso de adopción?</label>
@@ -284,12 +272,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.acuerdoAdopcion}
               />
-              {formik.errors.acuerdoAdopcion ? (
-                <div className="errors">{formik.errors.acuerdoAdopcion}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 11 */}
           <div className="container-lable-input">
             <div>
               <label>¿Dónde dormirá el animal?</label>
@@ -302,12 +286,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.dondeDormira}
               />
-              {formik.errors.dondeDormira ? (
-                <div className="errors">{formik.errors.dondeDormira}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 12 */}
           <div className="container-lable-input">
             <div>
               <label>¿Quién se hará cargo del animal?</label>
@@ -320,12 +300,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.aCargo}
               />
-              {formik.errors.aCargo ? (
-                <div className="errors">{formik.errors.aCargo}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 13 */}
           <div className="container-lable-input">
             <div>
               <label>¿Tienes un veterinario de confianza?</label>
@@ -338,12 +314,8 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.veterinarioConfianza}
               />
-              {formik.errors.veterinarioConfianza ? (
-                <div className="errors">{formik.errors.veterinarioConfianza}</div>
-              ) : null}
             </div>
           </div>
-          {/* Espacio 14 */}
           <div className="container-lable-input">
             <div>
               <label>¿Estás de acuerdo con la esterilización del animal?</label>
@@ -356,11 +328,7 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.esterilizacion}
               />
-              {formik.errors.esterilizacion ? (
-                <div className="errors">{formik.errors.esterilizacion}</div>
-              ) : null}
             </div>
-            
           </div>
           <div className="container-lable-input">
             <div>
@@ -374,14 +342,13 @@ function FomularioAdopcion() {
                 onChange={formik.handleChange}
                 value={formik.values.email}
               />
-              {formik.errors.email ? (
-                <div className="errors">{formik.errors.email}</div>
-              ) : null}
             </div>
-            
           </div>
+          <p id="FormAlert" className="alert warning"></p>
           <div className="container-button">
-            <button type="submit" className="submit-btn">Enviar</button>
+            <button type="submit" className="submit-btn">
+              Enviar
+            </button>
           </div>
         </form>
       </div>
@@ -390,4 +357,3 @@ function FomularioAdopcion() {
 }
 
 export default FomularioAdopcion;
-

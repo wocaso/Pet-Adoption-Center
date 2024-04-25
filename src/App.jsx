@@ -44,7 +44,7 @@ function App() {
           <Route path='/Mascotas' element={<SectionMascotas />} />
           <Route path='/SobreNosotros' element={<SobreNosotrosSection />} />
           <Route path='/Contactanos' element={<ContactanosSection />} />
-          <Route path='/perfil/:id' element={<PerfilMascota />} />
+          <Route path='/perfil/:id/' element={<PerfilMascota />} />
           <Route path='/perfil/:id/contrato' element={<ContratoMascota />} />
           <Route path='/perfil/:id/contrato/FormularioAdopcion' element={<FormularioAdopcion />} />
           <Route path='/perfil/:id/contrato/FormularioAdopcion/end' element={<FinAdopcionSection />} />

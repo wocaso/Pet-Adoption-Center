@@ -41,7 +41,7 @@ form .container-lable-input input {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-top: 3rem;
+    padding-top: 1rem;
 }
 
 .submit-btn{
@@ -102,12 +102,15 @@ select {
 
   /* Errors */
 
-  .errors{
+  #FormAlert{
+    display: none;
     margin: 1rem;
-    width: 10rem;
-    background: red;
+    width: 270px;
+    margin: 1rem auto 0 auto;
+    background: rgb(235, 122, 122);
     text-align: center;
+    justify-self: center;
     border-radius: 10px;
-    color: white;
+    color: red;
     font-weight: bold;
   }
