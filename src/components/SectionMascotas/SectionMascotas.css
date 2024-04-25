@@ -20,7 +20,31 @@
     background: linear-gradient(90deg, rgba(244,172,176,1) 25%, rgba(203,226,253,1) 66%);
 
 }
+#SectionMascotasFiltercontainerUpPerroSelec{
+    color: rgb(255, 255, 255);
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    transition: 0.5s ease;
+}
+#SectionMascotasFiltercontainerUpPerroNoSelec{
+    color: #000000;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    transition: 0.5s ease;
+}
 
+#SectionMascotasFiltercontainerUpGatoSelec{
+    color: rgb(255, 255, 255);
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    transition: 0.5s ease;
+}
+#SectionMascotasFiltercontainerUpGatoNoSelec{
+    color: #000000;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 60px;
+    transition: 0.5s ease;
+}
 #SectionMascotasInputContainer{
     display: flex;
     justify-content: space-between;
@@ -99,15 +123,34 @@ color: rgb(74, 74, 74);
     width: 100%;
     text-align: center;
 }
-#SectionMascotasFiltercontainerUp .Cat {
+#SectionMascotasFiltercontainerUp .CatSelect {
     border-bottom-left-radius: 55px;
     border-top-right-radius: 55px;
     box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2);
     -webkit-box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2); 
 }
-#SectionMascotasFiltercontainerUp .Dog {
+#SectionMascotasFiltercontainerUp .CatNoSelect {
+    /* border-bottom-left-radius: 55px; */
+    border-top-right-radius: 55px;
+    /* box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2);  */
+}
+#SectionMascotasFiltercontainerUp .DogSelect {
+    border-bottom-right-radius: 55px;
     border-top-left-radius: 55px;
+    box-shadow: 3px 4px 5px -1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 3px 4px 5px -1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 3px 4px 5px -1px rgba(0,0,0,0.2); 
+}
+#SectionMascotasFiltercontainerUp .DogNoSelect {
+    /* border-bottom-right-radius: 55px; */
+    border-top-left-radius: 55px;
+    /* box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.2);  */
+    
 }
 
 #SectionMascotasFiltercontainerDown{
