@@ -284,8 +284,8 @@ function SectionMascotas() {
                   onClick={handleSeleccionEspeciePerro}
                   className={
                     opcionSeleccionadaEspecie === "Perro"
-                      ? "DogSelect"
-                      : "DogNoSelect"
+                      ? "DogNoSelect"
+                      : "DogSelect"
                   }
                 >
                   Perros
@@ -299,8 +299,8 @@ function SectionMascotas() {
                   onClick={handleSeleccionEspecieGato}
                   className={
                     opcionSeleccionadaEspecie === "Gato"
-                      ? "CatSelect"
-                      : "CatNoSelect"
+                      ? "CatNoSelect"
+                      : "CatSelect"
                   }
                 >
                   Gatos
