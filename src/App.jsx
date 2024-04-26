@@ -11,6 +11,7 @@ import ContratoMascota from "./components/SectionMascotas/ContratoMascota/Contra
 import FormularioAdopcion from "./components/FormularioAdopcion/FomularioAdopcion";
 import Noticia from "./components/Noticia/Noticia";
 import LogIn from "./components/LogIn/LogIn";
+import ContactanosSection from "./components/ContactanosSection/ContactanosSection"
 import SobreNosotrosSection from './components/SobreNosotrosSection/SobreNosotrosSection';
 
 
@@ -43,6 +44,7 @@ function App() {
           <Route path='/noticia' element={<Noticia />} />
           <Route path='/Mascotas' element={<SectionMascotas />} />
           <Route path='/SobreNosotros' element={<SobreNosotrosSection />} />
+          <Route path='/Contactanos' element={<ContactanosSection />} />
           <Route path='/perfil/:id/' element={<PerfilMascota />} />
           <Route path='/perfil/:id/contrato' element={<ContratoMascota />} />
           <Route path='/perfil/:id/contrato/FormularioAdopcion' element={<FormularioAdopcion />} />
