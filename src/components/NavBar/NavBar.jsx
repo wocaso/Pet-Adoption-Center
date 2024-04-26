@@ -29,7 +29,7 @@ function NavBar() {
           <li className="NavBarListItem"><a href="/" className='NavBarLinks'>Inicio</a></li>
           <li className="NavBarListItem"><a href="/Mascotas" className='NavBarLinks'>Mascotas</a></li>
           <li className="NavBarListItem"><a href="/SobreNosotros" className='NavBarLinks'>Sobre Nosotros</a></li>
-          <li className="NavBarListItem"><a href="#LadingPageSection6Container" className='NavBarLinks' id='NavBarLinksContactanos'>Contactanos</a></li>
+          <li className="NavBarListItem"><a href="/Contactanos" className='NavBarLinks' id='NavBarLinksContactanos'>Contactanos</a></li>
         </ul>
       
       </nav>
