@@ -50,6 +50,12 @@ a {
     font-weight: 200;
     font-size: 34px;
 }
+#BodyContainerAdmin .BodyContainerSection h2 {
+    margin: 3rem 0 2rem 0;
+    font-family: 'Lemon/Milk', sans-serif;
+    font-weight: 200;
+    font-size: 22px;
+}
 #ButtonAdmin{
     background-color:  #DC277D;
     margin: 1rem;

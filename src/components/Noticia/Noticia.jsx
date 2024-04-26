@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import "./Noticia.css";
 
 function Noticia() {
-  const { id } = useParams();
   let arrayNoticias = [
     {
       id: 1,
@@ -14,7 +13,6 @@ function Noticia() {
     },
   ];
   
-
   return (
     <section id='NoticiaContainer'>
       <div id="NoticiaCuerpo" key={arrayNoticias[0].id}>

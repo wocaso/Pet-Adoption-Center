@@ -25,8 +25,8 @@ function NavBarAdmin() {
         </span>
 
         <ul id="Links"  className={` ${menuOpen ? 'show' : ''}`}  >
-          <li><a href="/Admin/Posts">Publicaciones</a></li>
-          <li><a href="/Admin/Bookings">Adopciones</a></li>
+          <li><a href="/Admin/Posts">Mascotas</a></li>
+          <li><a href="/Admin/Bookings">Solicitantes</a></li>
           <li><a href="/Admin/News">Noticias</a></li>
         </ul>
       </div>

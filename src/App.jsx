@@ -12,7 +12,7 @@ import FormularioAdopcion from "./components/FormularioAdopcion/FomularioAdopcio
 import Noticia from "./components/Noticia/Noticia";
 import LogIn from "./components/LogIn/LogIn";
 import SobreNosotrosSection from './components/SobreNosotrosSection/SobreNosotrosSection';
-import ContactanosSection from './components/ContactanosSection/ContactanosSection';
+
 
 import NavBarAdmin from "./components/Admin/NavBarAdmin/NavBarAdmin";
 import BodyContainerAdmin from './components/Admin/BodyContainerAdmin';
@@ -40,10 +40,9 @@ function App() {
         {!isAdminRoute(window.location.pathname) && <NavBar />}
         <Routes>
           <Route path='/' element={<BodyContainerLandingPage />} />
-          <Route path='/noticia/:id' element={<Noticia />} />
+          <Route path='/noticia' element={<Noticia />} />
           <Route path='/Mascotas' element={<SectionMascotas />} />
           <Route path='/SobreNosotros' element={<SobreNosotrosSection />} />
-          <Route path='/Contactanos' element={<ContactanosSection />} />
           <Route path='/perfil/:id/' element={<PerfilMascota />} />
           <Route path='/perfil/:id/contrato' element={<ContratoMascota />} />
           <Route path='/perfil/:id/contrato/FormularioAdopcion' element={<FormularioAdopcion />} />
@@ -71,7 +70,7 @@ const AdminRoutes = () => (
       <Route path='/Posts/Delete/:id' element={<PostsAdmin />} />
 
       <Route path='/Bookings' element={<BookingsAdmin />} />
-      <Route path="/Admin/Bookings/:id" element={<BookingInfoAdmin />}></Route>
+      <Route path="/Bookings/:id" element={<BookingInfoAdmin />}></Route>
 
       <Route path='/News' element={<NewsAdmin />} />
       <Route path='/News/NewNew' element={<NewNewAdmin />} />

@@ -5,8 +5,9 @@ function LadingPageSection6() {
   return (
     <div id="LadingPageSection6Container">
       <div id="LadingPageSection6ContainerLeft">
-      <img id="ContactanosSectionDownImage" src="./Assets/AdoptAppLogo.png" alt="" />
-        <img id="LadingPageSection6ContainerLeftImage" src="./Assets/FooterPeople.png" alt="" />
+        <img id="LadingPageSection6ContainerLeftImage" src="/Assets/imagenFooter.png" alt="" />
+
+        <img id="LadingPageSection6ContainerLeftLogo" src="./Assets/AdoptAppLogo.png" alt="" />
       </div>
       <div id="LadingPageSection6ContainerRight">
         <h1 id="LadingPageSection6ContainerTittle">Contactanos</h1>

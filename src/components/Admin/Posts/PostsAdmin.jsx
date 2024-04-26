@@ -45,7 +45,7 @@ function PostsAdmin() {
   return (
     <div id="BodyContainerAdmin">
       <div className="BodyContainerSection">
-        <h1>Publicaciones</h1>
+        <h1>Mascotas</h1>
         <div id="TableFunctions">
           <input 
             type="text" 

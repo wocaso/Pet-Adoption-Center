@@ -47,7 +47,7 @@ function LandingPageSectionNoticias() {
         <div className="container-left">
           {arrayNoticias.slice(0, 2).map(noticia => (
             <div className="noticia" key={noticia.id}>
-              <Link to={`/noticia/${noticia.id}`}>
+              <Link to={`/noticia`}>
                 <div className="container-imagen" style={{ backgroundImage: `url(/Assets/${noticia.img})` }}></div>
               </Link>
               <div className="noticia-container-text">

@@ -50,7 +50,7 @@ function BookingsAdmin() {
   return (
     <div id="BodyContainerAdmin">
       <div className="BodyContainerSection">
-        <h1>Adopciones</h1>
+        <h1>Solicitantes</h1>
         <div id="TableFunctions">
           <input 
             type="text" 
