@@ -1,6 +1,7 @@
 .loader {
     width: 200px;
     height: auto;
+    margin-top: 500px;
     animation: moveUpDown 1s infinite ease-in-out; /* 1 segundo de duración, animación infinita */
   }
   
