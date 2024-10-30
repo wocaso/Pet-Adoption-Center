@@ -10,3 +10,4 @@ We developed this on Vercel.js, as our group decided it was the best framework t
 
 ### Showcase
 
+![Alt text](https://github.com/wocaso/Pet-Adoption-Center/blob/main/public/Screen%20for%20readme.gif)
