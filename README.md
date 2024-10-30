@@ -1,26 +1,12 @@
 # Proyecto AdoptApp - Front End 🚀
 
-## Iniciar el Proyecto en Vite
+## The proyect
 
-### Prerrequisitos 📋
+This page is dedicated to a pet adoption center in Colombia. I worked on it with my team from No Conty as part of a work simulation project we ran in August 2023.
 
-Asegúrate de tener Node.js instalado en tu sistema. Puedes descargarlo desde [nodejs.org](https://nodejs.org/).
+### Teconoly used
 
-### Pasos para Iniciar el Proyecto 🔧
+We developed this on Vercel.js, as our group decided it was the best framework to fulfill the project’s needs.
 
-1. Abre una terminal.
+### Showcase
 
-2. Navega hasta la carpeta del cliente:
-   ```bash
-   cd Client
-3. Instala las dependencias del proyecto:
-    ```bash
-    npm install
-4. Inicia el servidor de desarrollo:
-    ```bash
-    npm run dev
-5. Abre tu navegador web favorito y ve a la dirección:
-    ```bash
-    http://localhost:5173/
-
-Este README proporciona instrucciones breves y claras para que el usuario cliente pueda iniciar el proyecto en Vite, ¡Espero que te sea útil!
